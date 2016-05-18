@@ -1,0 +1,24 @@
+<p>it's been</p>
+<select name="duration" id="duration">
+	<option value="three-days">three days</option>
+	<option value="five-days">five days</option>
+	<option value="one-week" selected>one week</option>
+</select>
+<p>since</p>
+<select name="since" id="since">
+	<option value="the-living-room">the living room</option>
+	<option value="you-laughed-at-me">you laughed at me</option>
+	<option value="you-looked-at-me" selected>you looked at me</option>
+</select>
+<p>
+	<button id="button">oh, okay</button>
+</p>
+
+<script type="text/javascript">
+document.getElementById("button").addEventListener("click", function() {
+	window.location = "/" + 
+		document.getElementById("duration").value +
+		"/since/" +
+		document.getElementById("since").value;
+});
+</script>
