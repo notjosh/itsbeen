@@ -8,8 +8,6 @@ body {
 	background: url(/image/bnl.jpg) no-repeat center center fixed;
 	background-size: cover;
 
-	margin: 0; padding: 0;
-
 	font-family: Helvetica;
 }
 
@@ -44,10 +42,38 @@ a {
 	color: #eee;
 }
 
+#yo {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+
+	padding: 10px;
+
+	font-size: 0.8em;
+
+	color: #fff;
+
+	background-color: #000;
+	border: 1px solid #666;
+}
+
+#yo p,
+#yo div {
+	margin: 0; padding: 0;
+}
+
 </style>
 </head>
 <body>
 
 {{ yield }}
+
+<div id="yo">
+	<p>
+		<a href="https://twitter.com/notjosh">@notjosh</a>
+		/
+		<a href="https://github.com/notjosh/itsbeen">github</a>
+	</p>
+</div>
 
 </body>
