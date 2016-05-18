@@ -34,7 +34,7 @@ func ReadWavs() []string {
 
 func BuildCommand(wav string) string {
 	return fmt.Sprintf(
-		"ffmpeg -i build/wav/%s -c:a libmp3lame -q:a 2 build/dist/audio/%s -c:a libvorbis -q:a 4 build/dist/audio/%s",
+		"ffmpeg -y -i build/wav/%s -c:a libmp3lame -q:a 2 build/dist/audio/%s -c:a libvorbis -q:a 4 build/dist/audio/%s",
 		wav,
 		strings.Replace(wav, ".wav", ".mp3", -1),
 		strings.Replace(wav, ".wav", ".ogg", -1))
