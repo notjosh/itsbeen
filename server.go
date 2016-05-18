@@ -11,7 +11,9 @@ import (
 
 func main() {
 	m := martini.Classic()
-	m.Use(render.Renderer())
+	m.Use(render.Renderer(render.Options{
+		Layout: "layout",
+	}))
 
 	m.Get("/", func(r render.Render) {
 		r.HTML(200, "index", nil)
@@ -33,9 +35,13 @@ func main() {
 		r.HTML(200, "play", struct {
 			Duration string
 			Since string
+			DurationTitle string
+			SinceTitle string
 		}{
 			Duration: duration,
 			Since: since,
+			DurationTitle: strings.Replace(params["duration"], "-", " ", -1),
+			SinceTitle: strings.Replace(params["since"], "-", " ", -1),
 		})
 	})
 
